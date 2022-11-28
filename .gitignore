@@ -1,0 +1,5 @@
+zig-cache/
+zig-out/
+build_runner.zig
+session.txt
+.vscode
