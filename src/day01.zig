@@ -26,11 +26,13 @@ fn problem1() !u32 {
 
     var increases: u32 = 0;
 
-    return while (lines.next()) |line| {
+    while (lines.next()) |line| {
         var current_depth = try parseInt(u32, line, 10);
         if (current_depth > previous_depth) increases += 1;
         previous_depth = current_depth;
-    } else increases;
+    }
+
+    return increases;
 }
 
 fn problem2() !u32 {
@@ -46,9 +48,11 @@ fn problem2() !u32 {
     var increases: u32 = 0;
     var i: u32 = 0;
 
-    return while (i <= nums.items.len - 4) : (i += 1) {
+    while (i <= nums.items.len - 4) : (i += 1) {
         if (nums.items[i] < nums.items[i + 3]) increases += 1;
-    } else increases;
+    }
+
+    return increases;
 }
 
 // Useful stdlib functions
